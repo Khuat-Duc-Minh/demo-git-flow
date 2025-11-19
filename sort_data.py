@@ -42,10 +42,9 @@ def merge_sort(arr: List[int]) -> List[int]:
             else:
                 out.append(right[j])
                 j += 1
-            out.extend(left[i:])
-            out.extend(right[j:])
-            return out
-
+        out.extend(left[i:])
+        out.extend(right[j:])
+        return out
 
     mid = len(arr) // 2
     left = merge_sort(arr[:mid])
