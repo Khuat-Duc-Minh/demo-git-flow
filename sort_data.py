@@ -32,7 +32,6 @@ def merge_sort(arr: List[int]) -> List[int]:
     if len(arr) <= 1:
         return arr.copy()
 
-
     def merge(left: List[int], right: List[int]) -> List[int]:
         i = j = 0
         out = []
@@ -45,7 +44,7 @@ def merge_sort(arr: List[int]) -> List[int]:
                 j += 1
             out.extend(left[i:])
             out.extend(right[j:])
-        return out
+            return out
 
 
     mid = len(arr) // 2
@@ -56,18 +55,15 @@ def merge_sort(arr: List[int]) -> List[int]:
 def sort_data(data: List[int], choice: str = "bubble") -> List[int]:
     """Sort the given list of integers using the chosen algorithm.
 
-
     Args:
     data: list of integers (will not be modified)
     choice: one of 'bubble', 'quick', 'merge'
-
 
     Returns:
     sorted list of integers
     """
     if data is None:
         raise ValueError("data must be a list")
-
 
     choice = choice.lower()
     if choice == "bubble":
@@ -77,7 +73,6 @@ def sort_data(data: List[int], choice: str = "bubble") -> List[int]:
     if choice == "merge":
         return merge_sort(data)
     raise ValueError(f"Unknown sort choice: {choice}. Supported: bubble, quick, merge")                         
-
 
 if __name__ == "__main__":
     sample = [5, 2, 9, 1, 5, 6]
